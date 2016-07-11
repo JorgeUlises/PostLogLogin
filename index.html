@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<title>Prueba de registro LOG</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width">
+	<script src='https://www.google.com/recaptcha/api.js?hl=es-419&onload=onloadCallback&render=explicit' async defer></script>
+</head>
+
+<body>
+			
+	<header>
+		<h1 id="fxa-signin-header">Prueba de registro LOG</h1>
+	</header>
+	<section>
+		<!-- Inicio marco del Formulario -->
+		<div class="formulario">
+			<!-- Inicio del Formulario -->
+			<form id="formulario" method="post" action="registro_log.php" title="" name="formulario">
+
+				<div class="input-row">
+					<input title="Nickname" id="nickname" name="usuario" tabindex="1" class="login ui-widget ui-widget-content ui-corner-all" size="20" placeholder="Usuario" maxlength="15" required="" type="text">
+				</div>
+
+				<div class="input-row password-row">
+					<input title="Contraseña" id="contrasena" name="clave" tabindex="2" class="login ui-widget ui-widget-content ui-corner-all" value="" size="20" placeholder="Clave" maxlength="50" required="" type="password">
+				</div>
+
+				<div style="width: 304px; margin: 0px auto;">
+					<div id="g-recaptcha"></div>
+				</div>
+
+				<div class="button-row">
+					<div class="campoBoton">
+						<button id="ingresar" tabindex="3" disabled type="submit">Cargando...</button>
+					</div>
+				</div>
+			</form>
+			<!-- Fin del Formulario -->
+		</div>
+		<!-- Fin del marco del Formulario -->
+	</section>
+				
+			<!--[if !(IE) | (gte IE 10)]><!-->
+			<noscript>SGA necesita Javascript.</noscript>
+		</div>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script type="text/javascript">
+$(document).ready(function(){function n(){$(".lateral-icon").click(function(n){var r=$(this).attr("data-open-id"),t=$("#"+r).css("display");a(),e(r,t);var c=function(){a(),$("body").unbind("click",this)};return $("body").bind("click",c),!1})}function a(){$(".panel-lateral").css("display","none")}function e(n,a){"block"==a?$("#"+n).css("display","none"):$("#"+n).css("display","block")}function r(){$("#formulario").on("submit",function(n){var a=$("#g-recaptcha-response").val();return c||0!=a.length?($("#ingresar").attr("disabled",""),!0):(n.preventDefault(),alert("Complete el reCAPTCHA antes de continuar."),!1)}),$("#ingresar").html("Ingresar")}function t(){var n=window.location.href;n.indexOf("error")>-1&&($(".error").css("display","block"),n.indexOf("Franja")>-1&&$(".error").html("Intenta acceder en una franja incorrecta."))}var c=!1;n(),t(),r()});var onloadCallback=function(){grecaptcha.render("g-recaptcha",{sitekey:"6LcOsyITAAAAAOWJkN51VZfmjffzmxEa5nJTMexd",theme:"light",lang:"es-419",callback:function(){recaptchaComplete=!0}}),$("#ingresar").removeAttr("disabled")};
+	</script>
+</body>
+
+</html>
